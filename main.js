@@ -114,6 +114,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const previousOperandTextElement = document.querySelector('[data-previous-operand]');
     const currentOperandTextElement = document.querySelector('[data-current-operand]');
     const piButton = document.querySelector('[data-pi]');
+    const negativeButton = document.querySelector('[data-negative]')
 
     
 
@@ -132,6 +133,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
             calculator.chooseOperation(button.innerText)
             calculator.updateDisplay()
             })
+    })
+
+    negativeButton.addEventListener("click", button => {
+        calculator.appendNumber("-")
+        calculator.updateDisplay()
     })
 
     piButton.addEventListener("click", button => {

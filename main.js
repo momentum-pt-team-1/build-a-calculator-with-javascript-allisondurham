@@ -1,6 +1,5 @@
 
 
-// console.log("js loaded")
 
 class Calculator {
     constructor(previousOperandTextElement, currentOperandTextElement) {
@@ -48,12 +47,24 @@ class Calculator {
             case "-":
                 computation = prev - current;
                 break;
-            case "*":
+            case "×":
                 computation = prev * current;
                 break;
             case "÷":
                 computation = prev / current;
                 break;
+            case "%":
+                computation = parseInt(prev) % parseInt(current);
+                break;
+            case "^":
+                computation = prev ** current;
+                break;
+            case "√":
+                computation = prev ** (1/current);
+                break;
+            // case "(-)":
+            //     computation = prev * (-current);
+            //     break;
             default:
                 return;
         }
@@ -102,6 +113,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const backspaceButton = document.querySelector('[data-backspace]');
     const previousOperandTextElement = document.querySelector('[data-previous-operand]');
     const currentOperandTextElement = document.querySelector('[data-current-operand]');
+    const piButton = document.querySelector('[data-pi]');
 
     
 
@@ -115,12 +127,16 @@ document.addEventListener('DOMContentLoaded', (event) => {
             calculator.updateDisplay()
     })
     })
-
     operationButtons.forEach(button => {
         button.addEventListener("click", () => {
             calculator.chooseOperation(button.innerText)
             calculator.updateDisplay()
             })
+    })
+
+    piButton.addEventListener("click", button => {
+        calculator.appendNumber(3.14159265)
+        calculator.updateDisplay()
     })
 
     equalsButton.addEventListener("click", button => {

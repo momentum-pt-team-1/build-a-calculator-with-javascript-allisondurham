@@ -2,8 +2,11 @@
 
 *, *::before, *::after {
     box-sizing: border-box;
-    font-family: Gotham Rounded, sans-serif;
+    /* font-family: Gotham Rounded, sans-serif; */
+    font-family: 'Orbitron', sans-serif;
+    /* font-family: 'Big Shoulders Display', cursive; */
     font-weight: normal;
+    /* font-weight: 900; */
     
 }
 
@@ -11,7 +14,10 @@ body {
     padding: 0;
     margin: 0;
     /* background-color: sandybrown; */
-    background: linear-gradient(to bottom right, rgba(123, 123, 224), rgba(155, 207, 231), rgba(163, 207, 163), rgba(236, 204, 96), rgba(226, 152, 66), #e4a1d9, rgba(144, 110, 236));
+    /* background: linear-gradient(to bottom right, rgba(123, 123, 224), rgba(155, 207, 231), rgba(163, 207, 163), rgba(236, 204, 96), rgba(226, 152, 66), #e4a1d9, rgba(144, 110, 236)); */
+    background-image: url("yellow.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .calculator-grid {
@@ -34,8 +40,8 @@ body {
     /* box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19); */
     outline: none;
     background-color: rgba(255, 255, 255, .35);
-    box-shadow: 0 9px #999;
-
+    /* box-shadow: 0 9px #999; */
+    box-shadow: 0 9px rgba(161, 104, 50, .5);
 }
 .calculator-grid > button:hover {
     background-color: rgba(255, 255, 255, .55);
@@ -74,10 +80,10 @@ body {
     word-break: break-all;
     border-radius: 8px;
     /* border-radius: 15%; */
-    border: 8px solid rgba(0, 0, 0, .05);
+    border-top: 8px solid rgba(0, 0, 0, .05);
     /* box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19); */
-    /* font-family: 'Orbitron', sans-serif; */
-    box-shadow: 0 9px #999;
+    /* box-shadow: 0 9px #999; */
+    box-shadow: 0 9px rgba(161, 104, 50, .5);
 }
 
 .output .previous-operand {

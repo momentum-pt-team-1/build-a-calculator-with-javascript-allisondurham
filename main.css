@@ -45,7 +45,7 @@ body {
     background-color: rgba(255, 255, 255, .35);
     /* box-shadow: 0 9px #999; */
     /* box-shadow: 0 9px rgba(99, 67, 35, 0.5); */
-    box-shadow: 9px 9px 9px rgba(99, 60, 21, 0.5);
+    box-shadow: 9px 9px 9px 2px rgba(99, 60, 21, 0.5);
 }
 .calculator-grid > button:hover {
     background-color: rgba(255, 255, 255, .55);
@@ -54,7 +54,7 @@ body {
 .calculator-grid > button:active {
     /* background-color: rgba(255, 255, 255, .55);   */
     /* background-color: #3e8e41; */
-    box-shadow: 5px 5px 5px #666;
+    box-shadow: 5px 5px 5px 2px #665;
     transform: translateY(8px);
 }
 
@@ -84,11 +84,11 @@ body {
     word-break: break-all;
     border-radius: 8px;
     /* border-radius: 15%; */
-    border-top: 8px solid rgba(0, 0, 0, .05);
+    /* border-top: 8px solid rgba(0, 0, 0, .05); */
     /* box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19); */
     /* box-shadow: 0 9px #999; */
     /* box-shadow: 0 9px rgba(99, 67, 35, 0.5); */
-    box-shadow: 9px 9px 9px rgba(99, 60, 21, 0.5);
+    box-shadow: 9px 9px 9px 2px rgba(99, 60, 21, 0.5);
 }
 
 .output .previous-operand {

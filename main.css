@@ -3,10 +3,11 @@
 *, *::before, *::after {
     box-sizing: border-box;
     /* font-family: Gotham Rounded, sans-serif; */
-    font-family: 'Orbitron', sans-serif;
+    /* font-family: 'Orbitron', sans-serif; */
     /* font-family: 'Big Shoulders Display', cursive; */
-    font-weight: normal;
-    /* font-weight: 900; */
+    font-family: 'Exo 2', sans-serif;
+    /* font-weight: normal; */
+    font-weight: bold;
     
 }
 
@@ -15,9 +16,11 @@ body {
     margin: 0;
     /* background-color: sandybrown; */
     /* background: linear-gradient(to bottom right, rgba(123, 123, 224), rgba(155, 207, 231), rgba(163, 207, 163), rgba(236, 204, 96), rgba(226, 152, 66), #e4a1d9, rgba(144, 110, 236)); */
-    background-image: url("yellow.jpeg");
+    background-image: url("bokehparty.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
+    /* background-position-x: center;
+    background-position-y: center; */
 }
 
 .calculator-grid {
@@ -41,7 +44,8 @@ body {
     outline: none;
     background-color: rgba(255, 255, 255, .35);
     /* box-shadow: 0 9px #999; */
-    box-shadow: 0 9px rgba(161, 104, 50, .5);
+    /* box-shadow: 0 9px rgba(99, 67, 35, 0.5); */
+    box-shadow: 9px 9px 9px rgba(99, 60, 21, 0.5);
 }
 .calculator-grid > button:hover {
     background-color: rgba(255, 255, 255, .55);
@@ -50,7 +54,7 @@ body {
 .calculator-grid > button:active {
     /* background-color: rgba(255, 255, 255, .55);   */
     /* background-color: #3e8e41; */
-    box-shadow: 0 5px #666;
+    box-shadow: 5px 5px 5px #666;
     transform: translateY(8px);
 }
 
@@ -83,7 +87,8 @@ body {
     border-top: 8px solid rgba(0, 0, 0, .05);
     /* box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19); */
     /* box-shadow: 0 9px #999; */
-    box-shadow: 0 9px rgba(161, 104, 50, .5);
+    /* box-shadow: 0 9px rgba(99, 67, 35, 0.5); */
+    box-shadow: 9px 9px 9px rgba(99, 60, 21, 0.5);
 }
 
 .output .previous-operand {

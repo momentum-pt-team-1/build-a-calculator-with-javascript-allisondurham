@@ -63,9 +63,6 @@ class Calculator {
             case "√":
                 computation = prev ** (1/current);
                 break;
-            // case "(-)":
-            //     computation = prev * (-current);
-            //     break;
             default:
                 return;
         }
@@ -79,7 +76,13 @@ class Calculator {
         const integerDigits = parseFloat(stringNumber.split(".")[0])
         const decimalDigits = stringNumber.split(".")[1]
         let integerDisplay
-        if(isNaN(integerDigits) && integerDigits !== "-") {
+        if (stringNumber === "-") {
+            integerDisplay = "-"
+            console.log(integerDisplay)
+            console.log(typeof "-")
+            return
+        }
+        if(isNaN(integerDigits)) {
         integerDisplay = ""
         } else {
         integerDisplay = integerDigits.toLocaleString("en", {
@@ -93,6 +96,10 @@ class Calculator {
     }
     
     updateDisplay() {
+        if (this.getDisplayNumber(this.currentOperand) === undefined){
+            this.currentOperandTextElement.innerText = "-"
+            return
+        }
         this.currentOperandTextElement.innerText = this.getDisplayNumber(this.currentOperand);
         if (this.operation != null) {
             this.previousOperandTextElement.innerText = `${this.getDisplayNumber(this.previousOperand)} ${this.operation}`
@@ -142,8 +149,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
     })
 
     piButton.addEventListener("click", button => {
-        calculator.appendNumber(3.14159265)
-        calculator.updateDisplay()
+        if (calculator.currentOperand === "") {
+            calculator.appendNumber(3.14159265)
+            calculator.updateDisplay()
+        } else {
+            return;
+        }
     })
 
     equalsButton.addEventListener("click", button => {

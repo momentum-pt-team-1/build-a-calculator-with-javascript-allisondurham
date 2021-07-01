@@ -61,8 +61,14 @@ class Calculator {
                 computation = prev ** current;
                 break;
             case "√":
-                computation = prev ** (1/current);
-                break;
+                if (prev < 0) {
+                    this.currentOperandTextElement.innerText = "ERR: imaginary number"
+                    this.previousOperandTextElement.innerText = `${this.getDisplayNumber(this.previousOperand)} ${this.operation} ${this.currentOperand}`;
+                    break;
+                } else {
+                    computation = prev ** (1/current);
+                    break;
+                }
             default:
                 return;
         }
@@ -95,6 +101,9 @@ class Calculator {
     }
     
     updateDisplay() {
+        if (this.currentOperandTextElement.innerText === "ERR: imaginary number") {
+            return;
+        }
         this.currentOperandTextElement.innerText = this.getDisplayNumber(this.currentOperand);
         if (this.operation != null) {
             this.previousOperandTextElement.innerText = `${this.getDisplayNumber(this.previousOperand)} ${this.operation}`
@@ -125,18 +134,19 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const calculator = new Calculator(previousOperandTextElement, currentOperandTextElement);
 
 
-    numberButtons.forEach(button => {
+    for (let button of numberButtons) {
         button.addEventListener("click", () => {
             calculator.appendNumber(button.innerText)
             calculator.updateDisplay()
     })
-    })
-    operationButtons.forEach(button => {
+    }
+
+    for (let button of operationButtons) {
         button.addEventListener("click", () => {
             calculator.chooseOperation(button.innerText)
             calculator.updateDisplay()
             })
-    })
+        }
 
     negativeButton.addEventListener("click", button => {
         if (calculator.currentOperandTextElement.innerText !== "") {

@@ -78,9 +78,8 @@ class Calculator {
         let integerDisplay
         if (stringNumber === "-") {
             integerDisplay = "-"
-            console.log(integerDisplay)
-            console.log(typeof "-")
-            return
+            return integerDisplay
+    
         }
         if(isNaN(integerDigits)) {
         integerDisplay = ""
@@ -96,10 +95,6 @@ class Calculator {
     }
     
     updateDisplay() {
-        if (this.getDisplayNumber(this.currentOperand) === undefined){
-            this.currentOperandTextElement.innerText = "-"
-            return
-        }
         this.currentOperandTextElement.innerText = this.getDisplayNumber(this.currentOperand);
         if (this.operation != null) {
             this.previousOperandTextElement.innerText = `${this.getDisplayNumber(this.previousOperand)} ${this.operation}`
@@ -144,8 +139,16 @@ document.addEventListener('DOMContentLoaded', (event) => {
     })
 
     negativeButton.addEventListener("click", button => {
-        calculator.appendNumber("-")
-        calculator.updateDisplay()
+        if (calculator.currentOperandTextElement.innerText !== "") {
+            calculator.currentOperandTextElement.innerText = calculator.currentOperand * -1
+        } 
+        if (calculator.currentOperand !== "") {
+            calculator.currentOperand = calculator.currentOperand * -1
+        }
+        else {
+            calculator.appendNumber("-")
+            calculator.updateDisplay()
+        }
     })
 
     piButton.addEventListener("click", button => {

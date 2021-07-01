@@ -85,7 +85,6 @@ class Calculator {
         if (stringNumber === "-") {
             integerDisplay = "-"
             return integerDisplay
-    
         }
         if(isNaN(integerDigits)) {
         integerDisplay = ""
@@ -151,9 +150,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
     negativeButton.addEventListener("click", button => {
         if (calculator.currentOperandTextElement.innerText !== "") {
             calculator.currentOperandTextElement.innerText = calculator.currentOperand * -1
-        } 
+            calculator.updateDisplay()
+            }
         if (calculator.currentOperand !== "") {
             calculator.currentOperand = calculator.currentOperand * -1
+            calculator.updateDisplay()
         }
         else {
             calculator.appendNumber("-")

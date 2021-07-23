@@ -1,0 +1,105 @@
+
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    /* font-family: Gotham Rounded, sans-serif; */
+    /* font-family: 'Orbitron', sans-serif; */
+    /* font-family: 'Big Shoulders Display', cursive; */
+    font-family: 'Exo 2', sans-serif;
+    /* font-weight: normal; */
+    font-weight: bold;
+    
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    /* background-color: sandybrown; */
+    /* background: linear-gradient(to bottom right, rgba(123, 123, 224), rgba(155, 207, 231), rgba(163, 207, 163), rgba(236, 204, 96), rgba(226, 152, 66), #e4a1d9, rgba(144, 110, 236)); */
+    background-image: url("bokehparty.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background-position-x: center;
+    background-position-y: center; */
+}
+
+.calculator-grid {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    min-height: 100vh;
+    grid-gap: 15px 10px;
+    grid-template-columns: repeat(4, 120px);
+    grid-template-rows: minmax(75px, auto) repeat(7, 60px);
+}
+
+.calculator-grid > button {
+    color:rgba(0, 0, 0, .65);
+    cursor: pointer;
+    font-size: 2rem;
+    border: 1px solid rgba(0, 0, 0, .05);
+    border-radius: 8px;
+    /* border-radius: 75%; */
+    /* box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19); */
+    outline: none;
+    background-color: rgba(255, 255, 255, .35);
+    background-image: linear-gradient(rgba(255, 255, 255, .35), rgba(223, 219, 219, 0.35));
+    /* box-shadow: 0 9px #999; */
+    /* box-shadow: 0 9px rgba(99, 67, 35, 0.5); */
+    box-shadow: 9px 9px 9px 2px rgba(99, 60, 21, 0.5);
+}
+
+.calculator-grid > button:hover {
+    background-color: rgba(255, 255, 255, .55);
+}
+
+.calculator-grid > button:active {
+    /* background-color: rgba(255, 255, 255, .55);   */
+    /* background-color: #3e8e41; */
+    box-shadow: 5px 5px 5px 2px #665;
+    transform: translateY(8px);
+}
+
+/* .operator {
+    background-color: rgba(255, 255, 255, .45) !important;
+}
+
+.operator > button:hover {
+    background-color: rgba(255, 255, 255, .65) !important;
+} */
+
+.span-two {
+    grid-column: span 2; 
+}
+
+
+.output {
+    grid-row: span 2;
+    grid-column: 1 / -1;
+    background-color: rgba(0, 0, 0, .35);
+    background-image: linear-gradient(rgba(0, 0, 0, .35), rgba(14, 13, 13, 0.35));
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+    border-radius: 8px;
+    /* border-radius: 15%; */
+    /* border-top: 8px solid rgba(0, 0, 0, .05); */
+    /* box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19); */
+    /* box-shadow: 0 9px #999; */
+    /* box-shadow: 0 9px rgba(99, 67, 35, 0.5); */
+    box-shadow: 9px 9px 9px 2px rgba(99, 60, 21, 0.5);
+}
+
+.output .previous-operand {
+    color: rgba(255, 255, 255, .55);
+    font-size: 1.5rem;
+}
+
+.output .current-operand {
+    color: rgba(255, 255, 255, .75);
+    font-size: 2.5rem;
+}
